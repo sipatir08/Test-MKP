@@ -5,7 +5,7 @@
 | **Nama Lengkap** | Muhammad Fathir |
 | **Email** | fathir080604@gmail.com |
 | **Phone** | +62 856-2448-2521 |
-| **Repository** | **Repository** | https://github.com/sipatir08/Test-MKP |
+| **Repository** | https://github.com/sipatir08/Test-MKP |
 
 Platform pembelian tiket bioskop online skala nasional.
 
