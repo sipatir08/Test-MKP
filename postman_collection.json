@@ -10,7 +10,18 @@
       "name": "Auth",
       "item": [
         {
-          "name": "admin",
+          "name": "login admin",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (pm.response.code === 200) {\r\n  pm.collectionVariables.set(\"json_web_token_0g7l\", pm.response.json().data.access_token);\r\n}"
+                ]
+              }
+            }
+          ],
           "request": {
             "method": "POST",
             "header": [],
@@ -41,7 +52,7 @@
           "response": []
         },
         {
-          "name": "customer",
+          "name": "login customer",
           "request": {
             "method": "POST",
             "header": [],
@@ -163,7 +174,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/api/v1/showtimes/3",
+              "raw": "http://localhost:8080/api/v1/showtimes/1",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -173,7 +184,7 @@
                 "api",
                 "v1",
                 "showtimes",
-                "3"
+                "1"
               ]
             }
           },
@@ -228,7 +239,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_08a8}}",
+                  "value": "{{json_web_token_0g7l}}",
                   "type": "string"
                 }
               ]
@@ -258,10 +269,6 @@
   "variable": [
     {
       "key": "json_web_token_0g7l",
-      "secret": true
-    },
-    {
-      "key": "json_web_token_08a8",
       "secret": true
     }
   ]
