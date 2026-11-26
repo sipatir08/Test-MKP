@@ -3,11 +3,14 @@
 | | |
 |---|---|
 | **Nama Lengkap** | Muhammad Fathir |
+| **Date** | 26 November 2026 |
 | **Email** | fathir080604@gmail.com |
 | **Phone** | +62 856-2448-2521 |
-| **Repository** | **Repository** | https://github.com/sipatir08/Test-MKP |
+| **Repository** | https://github.com/sipatir08/Test-MKP |
 
 Platform pembelian tiket bioskop online skala nasional.
+
+Alur booking, kunci kursi, dan refund dijawab di bagian A (desain) dan sudah disiapkan tabelnya di bagian B (database). Bagian C mengimplementasikan API sesuai soal: login dan CRUD jadwal tayang.
 
 | Bagian | Lokasi |
 |---|---|
@@ -94,7 +97,7 @@ repository/     query PostgreSQL (pgx), satu-satunya layer yang menyentuh databa
 service/        logika bisnis: login, validasi jadwal
 controllers/    terima request HTTP, panggil service, kirim JSON
 middleware/     validasi JWT & cek role admin
-routes/         daftar endpoint (net/http Go 1.22+)
+routes/         daftar endpoint (router bawaan net/http)
 utils/          implementasi JWT (HS256) & bcrypt
 db/             schema & seed PostgreSQL
 docs/           system design, ERD, flowchart, topologi
