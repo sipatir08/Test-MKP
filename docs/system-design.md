@@ -32,7 +32,7 @@
 
 2. **Melihat denah (ringan).** Denah kursi disimpan di Redis dan diperbarui setiap ada perubahan status. Request "lihat denah" yang jumlahnya paling banyak tidak menyentuh database.
 
-3. **Mengunci kursi.** Saat customer menekan "Lanjut Bayar", semua kursi yang dipilih dikunci dalam 1 transaksi:
+3. **Mengunci kursi.** Melihat jadwal dan denah boleh tanpa login, tapi sebelum mengunci kursi customer wajib login (API `POST /api/v1/auth/login`), karena kursi dikunci atas nama user tersebut (`locked_by_user_id`). Saat customer menekan "Lanjut Bayar", semua kursi yang dipilih dikunci dalam 1 transaksi:
    ```sql
    UPDATE showtime_seats
    SET status = 'locked', locked_by_user_id = $user, locked_until = now() + interval '10 minutes'
